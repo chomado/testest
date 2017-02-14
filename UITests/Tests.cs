@@ -7,7 +7,6 @@ using Xamarin.UITest.Queries;
 
 namespace testest.UITests
 {
-    [TestFixture(Platform.Android)]
     [TestFixture(Platform.iOS)]
     public class Tests
     {
@@ -30,7 +29,7 @@ namespace testest.UITests
         {
             //AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin Forms!"));
             app.Screenshot("Welcome screen.");
-            app.EnterText(c => c.Id("NameForm"), "Xamarin.UITest");
+            app.EnterText(c => c.Marked("NameForm"), "Xamarin.UITest");
             app.Screenshot("Forms.");
             
             //Assert.IsTrue(results.Any());
