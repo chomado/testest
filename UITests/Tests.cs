@@ -28,10 +28,12 @@ namespace testest.UITests
         [Test]
         public void WelcomeTextIsDisplayed()
         {
-            AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin Forms!"));
+            //AppResult[] results = app.WaitForElement(c => c.Marked("Welcome to Xamarin Forms!"));
             app.Screenshot("Welcome screen.");
-
-            Assert.IsTrue(results.Any());
+            app.EnterText(c => c.Id("NameForm"), "Xamarin.UITest");
+            app.Screenshot("Forms.");
+            
+            //Assert.IsTrue(results.Any());
         }
     }
 }
